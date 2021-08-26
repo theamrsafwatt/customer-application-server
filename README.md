@@ -24,11 +24,11 @@ java -jar target/customer-application-server-1.0.0.jar
 The application will start listening on `http://localhost:9080/`
 
 ## Docker
- After executing Build, run 
+ After executing Build, run:
  ```bash
 docker build --tag=customer-application-server:latest .
 `````
-To build from the image, then run
+To build from the image, then run:
 ```bash
 docker run -p9080:9080 customer-application-server:latest
 `````
@@ -37,3 +37,7 @@ to start the server. This will start our application in Docker and we can access
 ## Running unit tests
 
 Run `mvn test` to execute the unit tests
+
+## Healthcheck
+
+Issue a get request to `http://localhost:9080/health/up` you will recieve a response `200 OK`
