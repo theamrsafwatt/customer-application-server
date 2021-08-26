@@ -28,6 +28,10 @@ import com.jumia.model.Response;
 import com.jumia.model.SuccessResponse;
 import com.jumia.service.CustomerService;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CustomerHandlerTest extends BaseTest {

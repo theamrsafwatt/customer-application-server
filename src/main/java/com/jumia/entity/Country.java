@@ -9,6 +9,10 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Entity
 @Table(name = "COUNTRY")
 public class Country {

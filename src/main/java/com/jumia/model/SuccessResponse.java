@@ -1,5 +1,9 @@
 package com.jumia.model;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public enum SuccessResponse {
 	
 	VALID_CUSTOMER_PHONE_NUMBER("Valid", "The customer's phone number is valid");

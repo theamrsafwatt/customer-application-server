@@ -1,6 +1,7 @@
 package com.jumia.dao.customer;
 
 import java.util.List;
+
 import java.util.logging.Level;
 
 import javax.enterprise.inject.Typed;
@@ -15,6 +16,11 @@ import com.jumia.model.PaginatedSearchResult;
 import com.jumia.repository.ICustomerRepository;
 import com.jumia.utils.ApplicationLogger;
 import com.jumia.utils.SqlUtils;
+
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Component
 @Typed({ Object.class, SQLCustomerDao.class })
 public class SQLCustomerDao implements ICustomerDao {
@@ -28,6 +34,11 @@ public class SQLCustomerDao implements ICustomerDao {
 	@Autowired
 	private SqlUtils sqlUtils;
 	
+	/**
+	 * Find customer by identifier
+	 * @param identifier
+	 * @return Customer
+	 */
 	@Transactional
 	public Customer findByIdentifier(String identifier) {
 		logger.log(Level.INFO, "Executing findByIdentifier");
@@ -39,6 +50,17 @@ public class SQLCustomerDao implements ICustomerDao {
 		return customer;
 	}
 
+	/**
+	 * Search customers documents
+	 * @param customerName
+	 * @param phoneNumber
+	 * @param isValidPhoneNumber
+	 * @param countryName
+	 * @param countryCode
+	 * @param page
+	 * @param pageSize
+	 * @return PaginatedSearchResult<Customer>
+	 */
 	@Transactional
 	public PaginatedSearchResult<Customer> search(String customerName, String phoneNumber, Boolean isValidPhoneNumber, String countryName
 			, String countryCode, int page,  int pageSize) {

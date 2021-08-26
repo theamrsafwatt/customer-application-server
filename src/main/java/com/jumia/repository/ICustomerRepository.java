@@ -9,11 +9,31 @@ import org.springframework.stereotype.Repository;
 
 import com.jumia.entity.Customer;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer, Integer>{
 
+	/**
+	 * Find customer by identifier
+	 * @param identifier
+	 * @return Customer
+	 */
 	public Customer findByIdentifier(String identifier);
 
+	/**
+	 * Search customers documents
+	 * @param customerName
+	 * @param phoneNumber
+	 * @param isValidPhoneNumber
+	 * @param countryName
+	 * @param countryCode
+	 * @param limit
+	 * @param offset
+	 * @return List<Customer>
+	 */
 	@Query(value = "SELECT *\r\n"
 			+ "  FROM customer cu\r\n"
 			+ "  inner join country co\r\n"

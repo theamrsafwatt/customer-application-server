@@ -2,6 +2,10 @@ package com.jumia.model;
 
 import java.util.List;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class PaginatedSearchResult<T> {
 
 	private List<T> data;

@@ -9,6 +9,10 @@ import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Component
 public class ApplicationLogger {
 
@@ -19,16 +23,27 @@ public class ApplicationLogger {
 		logger = Logger.getLogger(ip.getMember().getDeclaringClass().getName());
 	}
 
+	/**
+	 * @param level
+	 * @param message
+	 */
 	public void log(Level level, String message) {
 		logger.log(level, message);
 	}
 
+	/**
+	 * @param exception
+	 */
 	public void logException(Exception exception) {
 		StringWriter stack = new StringWriter();
 		exception.printStackTrace(new PrintWriter(stack));
 		logger.log(Level.SEVERE, exception.getMessage(), stack);
 	}
 	
+	/**
+	 * @param exception
+	 * @param message
+	 */
 	public void logException(Exception exception , String message) {
 		StringWriter stack = new StringWriter();
 		exception.printStackTrace(new PrintWriter(stack));

@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jumia.dao.DBlist;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class CustomerDaoProducer  {
 
 	@Autowired
@@ -14,6 +18,10 @@ public class CustomerDaoProducer  {
 
 	private static final String DAO = "SQLITE";
 
+	/**
+	 * Produce and implementation for ICustomerDao
+	 * @return ICustomerDao
+	 */
 	@Produces
 	public ICustomerDao produce() {
 
