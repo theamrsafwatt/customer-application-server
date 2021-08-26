@@ -7,7 +7,9 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ApplicationLogger {
 
 	private final Logger logger;
@@ -19,14 +21,6 @@ public class ApplicationLogger {
 
 	public void log(Level level, String message) {
 		logger.log(level, message);
-	}
-
-	public void log(Level level, String msg, Object obj) {
-		logger.log(level, msg, obj);
-	}
-	
-	public void log(Level level, String msg, Object[] obj) {
-		logger.log(level, msg, obj);
 	}
 
 	public void logException(Exception exception) {
