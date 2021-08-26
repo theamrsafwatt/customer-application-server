@@ -12,6 +12,10 @@ import com.jumia.entity.Customer;
 import com.jumia.model.PaginatedSearchResult;
 import com.jumia.utils.ApplicationLogger;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Service
 public class CustomerService {
 
@@ -24,12 +28,22 @@ public class CustomerService {
 	@Autowired
 	private com.jumia.utils.StringUtils stringUtils;
 
+	/**
+	 * Find customer by identifier
+	 * @param identifier
+	 * @return Customer
+	 */
 	@Transactional
 	public Customer findByIdentifier(String identifier) {
 		logger.log(Level.INFO, "Executing findByIdentifier");
 		return customerDao.findByIdentifier(identifier);
 	}
 
+	/**
+	 * Validate customer phone number using phone number identifier
+	 * @param identifier
+	 * @return Customer
+	 */
 	@Transactional
 	public boolean validatePhoneNumberByIdentifier(String identifier) {
 		logger.log(Level.INFO, "Executing validatePhoneNumberByIdentifier");
@@ -43,6 +57,17 @@ public class CustomerService {
 		}
 	}
 
+	/**
+	 * Search customers documents
+	 * @param customerName
+	 * @param phoneNumber
+	 * @param isValidPhoneNumber
+	 * @param countryName
+	 * @param countryCode
+	 * @param page
+	 * @param pageSize
+	 * @return PaginatedSearchResult<Customer>
+	 */
 	@Transactional
 	public PaginatedSearchResult<Customer> search(String customerName, String phoneNumber, Boolean isValidPhoneNumber, String countryName
 			, String countryCode, int page,  int pageSize) {
@@ -51,6 +76,11 @@ public class CustomerService {
 				, countryCode, page, pageSize);
 	}
 
+	/**
+	 * Validate phone number using phone number and phone number regex
+	 * @param identifier
+	 * @return Customer
+	 */
 	public boolean validatePhoneNumber(String phoneNumber, String phoneNumberRegex) {
 		logger.log(Level.INFO, "Executing validatePhoneNumber for phoneNumber: " 
 				+ phoneNumber + " , phoneNumberRegex: " + phoneNumberRegex);

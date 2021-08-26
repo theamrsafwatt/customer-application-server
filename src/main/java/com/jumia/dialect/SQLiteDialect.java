@@ -7,6 +7,10 @@ import org.hibernate.type.StringType;
 
 import java.sql.Types;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class SQLiteDialect extends Dialect {
 
     public SQLiteDialect() {

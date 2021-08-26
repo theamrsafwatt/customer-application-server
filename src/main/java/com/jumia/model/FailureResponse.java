@@ -1,5 +1,9 @@
 package com.jumia.model;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public enum FailureResponse {
 	
 	ERROR("Error", "An error occurred while processing"),

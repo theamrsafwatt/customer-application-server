@@ -1,5 +1,9 @@
 package com.jumia.model;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class Response {
 
 	private String status;

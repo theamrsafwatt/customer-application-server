@@ -18,6 +18,10 @@ import com.jumia.model.SuccessResponse;
 import com.jumia.service.CustomerService;
 import com.jumia.utils.ApplicationLogger;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @Service
 public class CustomerHandler {
 
@@ -27,6 +31,11 @@ public class CustomerHandler {
 	@Autowired
 	private CustomerService customerService;
 
+	/**
+	 * Find customer by identifier
+	 * @param identifier
+	 * @return ResponseEntity<Object>
+	 */
 	@Transactional
 	public ResponseEntity<Object> findByIdentifier(String identifier) {
 		try {
@@ -47,6 +56,11 @@ public class CustomerHandler {
 		}
 	}
 
+	/**
+	 * Validate customer phone number using phone number identifier
+	 * @param identifier
+	 * @return ResponseEntity<Object>
+	 */
 	@Transactional
 	public ResponseEntity<Object> validatePhoneNumberByIdentifier(String identifier) {
 		try {
@@ -77,6 +91,17 @@ public class CustomerHandler {
 		}
 	}
 
+	/**
+	 * Search customers documents
+	 * @param customerName
+	 * @param phoneNumber
+	 * @param isValidPhoneNumber
+	 * @param countryName
+	 * @param countryCode
+	 * @param page
+	 * @param pageSize
+	 * @return ResponseEntity<Object>
+	 */
 	@Transactional
 	public ResponseEntity<Object> search(String customerName, String phoneNumber, Boolean isValidPhoneNumber, String countryName
 			, String countryCode, int page,  int pageSize) {

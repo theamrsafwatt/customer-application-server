@@ -9,6 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.jumia.controller.CustomerController;
 import com.jumia.controller.HealthController;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @SpringBootTest
 class CustomerApplicationTests {
 

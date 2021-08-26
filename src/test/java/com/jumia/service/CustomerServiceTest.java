@@ -25,6 +25,10 @@ import com.jumia.helper.BaseTest;
 import com.jumia.model.PaginatedSearchResult;
 import com.jumia.repository.ICustomerRepository;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CustomerServiceTest extends BaseTest {

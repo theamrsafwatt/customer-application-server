@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jumia.handler.CustomerHandler;
 
+/**
+ * @author Amr ELbassiouni
+ *
+ */
 @RestController
 @RequestMapping("customer")
 public class CustomerController {
@@ -18,18 +22,39 @@ public class CustomerController {
 	@Autowired
 	private CustomerHandler customerHandler;
 
+	/**
+	 * Get endpoint to find customer by identifier
+	 * @param identifier
+	 * @return ResponseEntity<Object>
+	 */
 	@CrossOrigin
 	@GetMapping("/{identifier}")
 	public ResponseEntity<Object> findByIdentifier(@PathVariable String identifier) {
 		return customerHandler.findByIdentifier(identifier);
 	}
 	
+	/**
+	 * Get endpoint to validate customer phone number using phone number identifier
+	 * @param identifier
+	 * @return ResponseEntity<Object>
+	 */
 	@CrossOrigin
 	@GetMapping("/{identifier}/validatephonenumber")
 	public ResponseEntity<Object> validatePhoneNumberByIdentifier(@PathVariable String identifier) {
 		return customerHandler.validatePhoneNumberByIdentifier(identifier);
 	}
 	
+	/**
+	 * Get endpoint to search customers documents
+	 * @param customerName
+	 * @param phoneNumber
+	 * @param isValidPhoneNumber
+	 * @param countryName
+	 * @param countryCode
+	 * @param page
+	 * @param pageSize
+	 * @return ResponseEntity<Object>
+	 */
 	@CrossOrigin
 	@GetMapping("/search")
 	public ResponseEntity<Object> search(@RequestParam(name = "customerName", required = false) String customerName

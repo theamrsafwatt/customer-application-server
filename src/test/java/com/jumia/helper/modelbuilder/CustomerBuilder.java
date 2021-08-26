@@ -8,6 +8,10 @@ import java.util.UUID;
 import com.jumia.entity.Country;
 import com.jumia.entity.Customer;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class CustomerBuilder {
 	
     private final Customer customer = new Customer();

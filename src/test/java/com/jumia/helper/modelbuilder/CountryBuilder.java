@@ -4,6 +4,10 @@ import java.util.Random;
 
 import com.jumia.entity.Country;
 
+/**
+ * @author Amr Elbassiouni
+ *
+ */
 public class CountryBuilder {
 
     private final Country country = new Country();
