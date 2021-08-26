@@ -27,16 +27,6 @@ public abstract class BaseTest {
         }).when(loggerMock).log(any(), anyString());
 
         doAnswer(invocation -> {
-            logger.log(invocation.getArgument(0, Level.class), invocation.getArgument(1, String.class), invocation.getArgument(2, Object.class));
-            return null;
-        }).when(loggerMock).log(any(Level.class), anyString(), any(Object.class));
-
-        doAnswer(invocation -> {
-            logger.log(invocation.getArgument(0, Level.class), invocation.getArgument(1, String.class), invocation.getArgument(2, Object[].class));
-            return null;
-        }).when(loggerMock).log(any(Level.class), anyString(), any(Object[].class));
-
-        doAnswer(invocation -> {
             StringWriter stack = new StringWriter();
             invocation.getArgument(0, Exception.class).printStackTrace(new PrintWriter(stack));
             logger.log(Level.SEVERE, stack.toString());
