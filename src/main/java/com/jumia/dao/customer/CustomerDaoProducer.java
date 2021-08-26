@@ -19,7 +19,7 @@ public class CustomerDaoProducer  {
 	private static final String DAO = "SQLITE";
 
 	/**
-	 * Produce and implementation for ICustomerDao
+	 * Produce an implementation for ICustomerDao
 	 * @return ICustomerDao
 	 */
 	@Produces
